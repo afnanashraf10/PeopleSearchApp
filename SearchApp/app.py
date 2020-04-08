@@ -12,7 +12,7 @@ SECRET_KEY = os.urandom(32)
 app = Flask(__name__)
 app.config['SECRET_KEY'] = SECRET_KEY
 
-PATH = "/mnt/e/GCP-Source-Repo/Workspace/Workomo/SearchApp/"
+PATH = "/home/afnan/PeopleSearchApp/SearchApp/"
 
 
 @app.route('/')
@@ -108,4 +108,4 @@ def get_json_from_file():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
