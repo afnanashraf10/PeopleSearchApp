@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+{% if result %}
+    <table class="table table-condensed">
+        <thead>  
+                <tr>
+                    <th>Name</th>
+                    <th>Intro</th>
+                    <th>Location</th>
+                    <th>Job</th>
+                    <th>About</th>
+                    <th>Education</th>
+                    <th>Skills</th>
+                    <th>Url</th>
+                </tr>
+        </thead>
+        <tbody>
+    {% for val in result %}
+                <tr>
+                <td>{{val[0]}}</td>
+                <td>{{val[1]}}</td>
+                <td>{{val[2]}}</td>
+                <td>{{val[3]}}</td>
+                <td>{{val[4]}}</td>
+                <td>{{val[5]}}</td>
+                <td>{{val[6]}}</td>
+                <td>{{val[7]}}</td>
+                </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+
+<div class="container">
+    <div class="row">
+        <h1>No results found!!!</h1>
+    </div>
+</div>
+
+{% endif %}
+{% endblock content %}
