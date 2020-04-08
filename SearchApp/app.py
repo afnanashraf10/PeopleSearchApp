@@ -4,7 +4,6 @@ import os
 import sqlite3
 import json
 import re
-import excel2json
 from flask import Flask, render_template, request
 from forms import PeopleSearchForm
 
@@ -102,16 +101,11 @@ def insert_table():
 
 def get_json_from_file():
     """Read Json from file Function"""
-    convert_xlsx_to_json()
     json_file = open(PATH + 'people.json',)
     data = json.load(json_file)
     json_file.close()
     return data
 
-
-def convert_xlsx_to_json():
-    """Convert Excel to Json Function"""
-    excel2json.convert_from_file(PATH + 'Workomo_Coding_Problem_Sample_Linkedin_Data_1.xlsx')
 
 if __name__ == '__main__':
     app.run(debug=True)
